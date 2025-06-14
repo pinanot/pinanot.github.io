@@ -12,7 +12,7 @@
         if (!window.location.hash) {
           history.replaceState(null, '', window.location.pathname + window.location.search + "#");
         }
-        document.getElementById('basedef').src = (x => `http://${x.username || x.host}/${x.password}`)(new URL(window.location.href));
+        document.getElementById('basedef').src = (x => `http://${x.username + "/" || x.host + "/README.md"}${x.password || ""}`)(new URL(window.location.href));
         document.getElementById('mainsrc').textContent = (x => [...URLSearchParams(window.location.search).entries()].map(([k, v]) => `[${k} ${x} ${v}]`).join(''))(window.location.hash.slice(1));
       </script>
     </div>
